@@ -27,7 +27,7 @@ def main():
     extract_matching_pubkeys(addresses, file2_path, output_file)
     
     print(f"The public key has been exported to: {output_file}")
-#I already have the public keys of the rich, but I don’t have the computing power. Please buy me a cup of coffee and I will leave the task to you.
+
 if __name__ == '__main__':
     main()
 
