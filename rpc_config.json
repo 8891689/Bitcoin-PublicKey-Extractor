@@ -1,0 +1,8 @@
+{
+  "rpc_host": "127.0.0.1",
+  "rpc_port": 8332,
+  "rpc_user": "8891689",
+  "rpc_password": "1234567890",
+  "num_workers": 4
+}
+
