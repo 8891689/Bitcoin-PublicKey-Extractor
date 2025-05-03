@@ -19,14 +19,16 @@ This Python script connects to a locally running Bitcoin (or compatible) node, s
 
 ## Configuration
 
-Before running the script, you need to modify the following constants at the beginning of the script to match your node's configuration:
-
+Before running the script, you need to modify the following constants at the beginning of the rpc_config.json script to match the configuration of your node. If there is no password, please generate it yourself in the rpcauth.py script in bitcoin/share/rpcauth. It is usually the same as the wallet password and name. :
 ```python
-# RPC Connection Settings
-RPC_USER = 'Your_RPC_Username'     # Change to your RPC username
-RPC_PASSWORD = 'Your_RPC_Password' # Change to your RPC password
-RPC_PORT = '8332'                  # Change if your node uses a different port
-RPC_URL = f'http://127.0.0.1:{RPC_PORT}' # Usually no need to change unless the node is not local
+{
+  "rpc_host": "127.0.0.1",
+  "rpc_port": 8332,
+  "rpc_user": "Your_RPC_Username",
+  "rpc_password": "Your_RPC_Password",
+  "num_workers": 4
+}
+
 ```
 
 Note: Hard-coding the RPC password directly into the script will bring certain security risks. Please test it with an empty wallet with no balance. Ensure the script file has appropriate access permissions.
@@ -35,13 +37,12 @@ Note: Hard-coding the RPC password directly into the script will bring certain s
 This script requires the requests and base58 libraries. You can install them using pip:
 
 ```
-pip install requests base58
+pip install requests
 ```
 
 Alternatively, save the following as a requirements.txt file:
 ```
 requests
-base58
 ```
 
 Txt
@@ -81,17 +82,20 @@ The output file will contain multiple lines, each with the following format:
 
 Example:
 ```
-02000003446c70bb4082216e6e0a8d905c43804613f40fbb4ef89e1491703d6b6c: 17miFNJvqmM5G4YUrS8YAfYhVHJYfejWVU
-02000003cdd1e483d359bbfadb1777f5164108765792198cb8d1a69a16fc61acc7: 16wwZTNnXDwkPezUGWJeRWmBy5zXhha3NA
-02000004a91139d2b426760fc930aded2f5fcc3cc86cb0be7bf7735189e3b86821: 1E2j2SKUFdrE9Y8FQNU8HZTwSSyUFwbdz7
-020000067bb4037be2aa70f5fd152c0e6dfc9457686f6e9808262fa53ee6beb4ba: 1MBNnQU6mtiPcTVoEFMuPteyxNYgFGAwYk
-02000006b9a0307747c4b1f5d02bf2bebcad705352332983697ecb8c9ec2b2b5b8: 16dqEfw29ME6C75CfgsfhsSq3F5zEezqSJ
-0200000a5bf7a249717ddb38080de1d43a9b2acaceb6fbcf390ca83a3de98c38e2: 1BddZoCfcgox1bf6hjqP7gXLj3CAkYbgdf
-0200000a8740c06b9465ca065a54cd74163a59e8ead8b7285d90d4696072247941: 1CeFbuKtULshnHCezC82CQurwwaGbQNpCi
-0200000b0394e2ac86be288e407c6cadc217307a54c3aedceec5c3d0f6edf29610: 18p8Mz83oBMaHyuQPRHej5yM1cbVu56eXg
-0200000b84e04a37aef4228a3fef9ee55b0dc5fa38274c553c0c480b54e9daea97: 19X6fejQVKwTPLUqJdaADZ47jAqikk7oLM
-0200000fa194933ac35c34c18ad659b5c0bb8cc4b21147d66a7721c171e346079d: 13pLZ69YRXrrpSjL3dMNnqzytga6YvvMU3
+02000003446c70bb4082216e6e0a8d905c43804613f40fbb4ef89e1491703d6b6c
+02000003cdd1e483d359bbfadb1777f5164108765792198cb8d1a69a16fc61acc7
+02000004a91139d2b426760fc930aded2f5fcc3cc86cb0be7bf7735189e3b86821
+020000067bb4037be2aa70f5fd152c0e6dfc9457686f6e9808262fa53ee6beb4ba
+02000006b9a0307747c4b1f5d02bf2bebcad705352332983697ecb8c9ec2b2b5b8
+0200000a5bf7a249717ddb38080de1d43a9b2acaceb6fbcf390ca83a3de98c38e2
+0200000a8740c06b9465ca065a54cd74163a59e8ead8b7285d90d4696072247941
+0200000b0394e2ac86be288e407c6cadc217307a54c3aedceec5c3d0f6edf29610
+0200000b84e04a37aef4228a3fef9ee55b0dc5fa38274c553c0c480b54e9daea97
+0200000fa194933ac35c34c18ad659b5c0bb8cc4b21147d66a7721c171e346079d
 ```
+# Since public keys can generate addresses of multiple currencies, if you need all the public keys, please go to my other library, search and extract the public keys with surplus by yourself.
+https://github.com/8891689/Public-key-balance-query
+
 
 # Sponsorship
 If this project was helpful to you, please buy me a coffee. Your support is greatly appreciated. Thank you!
