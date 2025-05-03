@@ -1,4 +1,4 @@
-# Bitcoin Public Key/Address Extractor
+# Bitcoin Public Key Extractor
 
 This Python script connects to a locally running Bitcoin (or compatible) node, scans a specified range of blocks, and extracts public keys found within transactions along with their corresponding P2PKH addresses.
 
@@ -19,8 +19,9 @@ This Python script connects to a locally running Bitcoin (or compatible) node, s
 
 ## Configuration
 
-Before running the script, you need to modify the following constants at the beginning of the rpc_config.json script to match the configuration of your node. If there is no password, please generate it yourself in the rpcauth.py script in bitcoin/share/rpcauth. It is usually the same as the wallet password and name. :
-```python
+Before running the script, you need to modify the rpc_config.json constants in the directory to match your node configuration. If you don't have a password, generate it yourself in the rpcauth.py script in the BTC Core wallet directory bitcoin/share/rpcauth, which is usually the same as the wallet password and name:
+
+```
 {
   "rpc_host": "127.0.0.1",
   "rpc_port": 8332,
@@ -34,8 +35,7 @@ Before running the script, you need to modify the following constants at the beg
 Note: Hard-coding the RPC password directly into the script will bring certain security risks. Please test it with an empty wallet with no balance. Ensure the script file has appropriate access permissions.
 
 # Install Dependencies
-This script requires the requests and base58 libraries. You can install them using pip:
-
+This script requires the requests library. You can install them using pip:
 ```
 pip install requests
 ```
@@ -93,7 +93,7 @@ Example:
 0200000b84e04a37aef4228a3fef9ee55b0dc5fa38274c553c0c480b54e9daea97
 0200000fa194933ac35c34c18ad659b5c0bb8cc4b21147d66a7721c171e346079d
 ```
-# Since public keys can generate addresses of multiple currencies, if you need all the public keys, please go to my other library, search and extract the public keys with surplus by yourself.
+Since the public key can generate addresses of multiple currencies, if you need the public key with a balance of all currencies, please go to my other library to search and extract the public key with a balance by yourself.
 https://github.com/8891689/Public-key-balance-query
 
 
