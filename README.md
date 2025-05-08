@@ -38,6 +38,11 @@ Note: Hard-coding the RPC password directly into the script will bring certain s
 This script requires the requests library. You can install them using pip:
 ```
 pip install requests
+
+or
+
+sudo apt update
+sudo apt install libcurl4-openssl-dev
 ```
 
 Alternatively, save the following as a requirements.txt file:
@@ -49,12 +54,21 @@ Txt
 Then run:
 ```
 pip install -r requirements.txt
+
+or
+
+g++ extract_data.cpp -lcurl -pthread -Wall -Wextra -O3 -march=native -o extract_data
 ```
 # How to Run
 
 Run the script using the following command format:
 ```
 python3 extract_data.py <start_block_height> <end_block_height> <output_filename>
+
+or
+
+./extract_data <start_block_height> <end_block_height> <output_filename>
+
 ```
 
 Parameters:
@@ -70,6 +84,11 @@ Example:
 Scan blocks from 100000 to 100100 (inclusive) and save the results to output_pairs.txt:
 ```
 python3 extract_data.py 100000 100100 output_pairs.txt
+
+or
+
+./extract_data 100000 100100 output_pairs.txt
+
 ```
 
 If the script loses connection to the node during execution, it will attempt to reconnect a few times. If it still fails, it will prompt you to press 'P' to manually trigger a reconnection attempt.
