@@ -172,7 +172,7 @@ dash
 2936 dash.11.a.txt 100 or more
 -----------------------------------
 zec
-1254 zec.all.z.txt
+64382 zec.all.z.txt
 -----------------------------------
 ```
 # Taking the BTC data document as an example, the first part is the public key, the middle part is the address, and the last part is the amount.
