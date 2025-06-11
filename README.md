@@ -1,6 +1,6 @@
 # Blockchain Public Key Extractor
 
-The script connects to a locally running full-node core wallet (or compatible) node, scans a specified range of blocks, and extracts the public keys found in the transactions into a document. It supports multi-threading and local port connections.
+The script connects to a locally running full-node core wallet (or compatible) node, scans a specified range of blocks, and extracts the public keys found in the transactions into a document. Supports multi-threaded execution and is compatible with extracting public keys of currencies such as BTC, ETH, BCH, LTC, DOGE, DASH, and ZEC.
 
 ## Features
 
