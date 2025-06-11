@@ -139,6 +139,8 @@ Since the public key can generate addresses of multiple currencies, if you need 
 https://github.com/8891689/Public-key-balance-query
 
 # If you need a finished public key with a balance, please contact me. It is not free. The $50 price includes public keys for 7 currencies with or without balances.
+
+Why do I need to pay? Because I need to get paid. If I keep doing it for free, I won't have enough financial support to develop more programs for everyone to use. Thank you for your understanding and tolerance.
 ```
 -----------------------------------
 BTC
